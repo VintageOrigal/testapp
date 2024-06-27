@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit User</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <form action="/admin/edit-user/<%= user.id %>" method="post">
+    <h2>Edit User</h2>
+    <label>Username</label>
+    <input type="text" name="username" value="<%= user.username %>" required>
+    <label>Surname</label>
+    <input type="text" name="surname" value="<%= user.surname %>" required>
+    <label>Contact</label>
+    <input type="text" name="contact" value="<%= user.contact %>" required>
+    <label>Email</label>
+    <input type="email" name="email" value="<%= user.email %>" required>
+    <label>Area</label>
+    <input type="text" name="area" value="<%= user.area %>" required>
+    <button type="submit">Update User</button>
+    <button action="/admin/search-user" method="post" type="submit">Cancel</button>
+    <button action="/admin/search-user" method="post" type="submit">Back</button>
+    <button type="submit" formaction="/admin/send-temp-password/<%= user.id %>" method="post">Send Temp Pass</button>
+    <button type="submit" formaction="/admin/delete-user/<%= user.id %>"method="post" onsubmit="return confirm('Are you sure you want to delete this user?')">Delete User</button>
+  </form>
+</body>
+</html>

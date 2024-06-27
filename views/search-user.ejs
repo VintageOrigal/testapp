@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Users</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <form action="/admin/search-user" method="post">
+    <h2>Search Users</h2>
+    <label>Search Query</label>
+    <input type="text" name="query" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (typeof users !== 'undefined') { %>
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Surname</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Area</th>
+        <th>Actions</th>
+      </tr>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.surname %></td>
+          <td><%= user.contact %></td>
+          <td><%= user.email %></td>
+          <td><%= user.area %></td>
+          <td><a href="/admin/edit-user/<%= user.id %>">Edit</a></td>
+        </tr>
+        
+      <% }) %>
+    </table>
+  <% } %>
+</body>
+</html>

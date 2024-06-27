@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <h2>User Profile</h2>
+  <form action="/profile" method="post">
+    <label>Username</label>
+    <input type="text" name="username" value="<%= user.username %>" required>
+    <label>Surname</label>
+    <input type="text" name="surname" value="<%= user.surname %>" required>
+    <label>Contact</label>
+    <input type="text" name="contact" value="<%= user.contact %>" required>
+    <label>Email</label>
+    <input type="email" name="email" value="<%= user.email %>" required>
+    <label>Area</label>
+    <input type="text" name="area" value="<%= user.area %>" required>
+    <button type="submit">Update Profile</button>
+  </form>
+  <form action="/delete-profile" method="POST">
+    <button type="submit" onclick="return confirm('Are you sure you want to delete your profile?')">Delete Profile</button>
+  </form>
+  
+</body>
+</html>
