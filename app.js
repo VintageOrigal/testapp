@@ -11,6 +11,7 @@ const { title } = require('process');
 
 const app = express();
 const bot = new TelegramBot(config.telegram.token);
+const bot2 = require('./telegramBot');
 
 //Function to generate random temporary password
 function generateTempPassword() {
